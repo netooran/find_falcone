@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VehiclePicker has the expected html structure 1`] = `
+<div
+  class="vehicle-picker"
+>
+  <div
+    class="vehicles"
+  >
+    <vehicle-stub
+      vehicle="[object Object]"
+    />
+    <vehicle-stub
+      vehicle="[object Object]"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,44 @@
+<template>
+  <div class="vehicle">
+    <i class="fas fa-space-shuttle fa-4x"/>
+    <div class="vehicle-info">
+      <h4>{{ vehicle.name }} ({{ vehicle.total_no }})</h4>
+      <h6>Speed: {{ vehicle.speed }} au/h</h6>
+      <h6>Max distance: {{ vehicle.max_distance }} au</h6>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Vehicle",
+  props: {
+    vehicle: {
+      name: String,
+      total_no: Number,
+      max_distance: Number,
+      speed: Number
+    }
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.vehicle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+.vehicle:hover {
+  box-shadow: 1px 1px 3px 4px rgb(155, 154, 154);
+}
+
+.vehicle-info > * {
+  margin: 0%;
+}
+</style>

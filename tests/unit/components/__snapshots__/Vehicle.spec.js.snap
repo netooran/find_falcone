@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vehicle has the expected html structure 1`] = `
+<div
+  class="vehicle"
+>
+  <i
+    class="fas fa-space-shuttle fa-4x"
+  />
+   
+  <div
+    class="vehicle-info"
+  >
+    <h4>
+      BFR (2)
+    </h4>
+     
+    <h6>
+      Speed: 2 au/h
+    </h6>
+     
+    <h6>
+      Max distance: 437 au
+    </h6>
+  </div>
+</div>
+`;

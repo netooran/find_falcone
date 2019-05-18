@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App has the expected html structure on error 1`] = `
+<div
+  id="app"
+>
+  <helloworld-stub
+    msg="Finding Falcone!"
+  />
+   
+  <!---->
+   
+  <!---->
+   
+  <i
+    class="fab fa-grav"
+  >
+     Unfortunately our ravens did not come back. Try again later.
+  </i>
+</div>
+`;
+
+exports[`App has the expected html structure when all data given 1`] = `
+<div
+  id="app"
+>
+  <helloworld-stub
+    msg="Finding Falcone!"
+  />
+   
+  <!---->
+   
+  <vehiclepicker-stub />
+   
+  <!---->
+</div>
+`;
+
+exports[`App has the expected html structure when no data given 1`] = `
+<div
+  id="app"
+>
+  <helloworld-stub
+    msg="Finding Falcone!"
+  />
+   
+  <!---->
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`App has the expected html structure when planet data given 1`] = `
+<div
+  id="app"
+>
+  <helloworld-stub
+    msg="Finding Falcone!"
+  />
+   
+  <planetpicker-stub />
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`App has the expected html structure when vehicles data given 1`] = `
+<div
+  id="app"
+>
+  <helloworld-stub
+    msg="Finding Falcone!"
+  />
+   
+  <!---->
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`App has the expected html structure when vehicles data given and a planet is selected 1`] = `
+<div
+  id="app"
+>
+  <helloworld-stub
+    msg="Finding Falcone!"
+  />
+   
+  <!---->
+   
+  <vehiclepicker-stub />
+   
+  <!---->
+</div>
+`;

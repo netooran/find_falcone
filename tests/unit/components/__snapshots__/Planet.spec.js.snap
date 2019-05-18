@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Planet has the expected html structure 1`] = `
+<div
+  class="planet selected"
+>
+  <i
+    class="fas fa-globe-africa fa-8x"
+  />
+   
+  <div
+    class="planet-info"
+  >
+    <h1>
+      Toliman
+    </h1>
+     
+    <h4>
+      Distance: 437 au
+    </h4>
+  </div>
+</div>
+`;
+
+exports[`Planet has the expected html structure when selected 1`] = `
+<div
+  class="planet selected"
+>
+  <i
+    class="fas fa-globe-africa fa-8x"
+  />
+   
+  <div
+    class="planet-info"
+  >
+    <h1>
+      Toliman
+    </h1>
+     
+    <h4>
+      Distance: 437 au
+    </h4>
+  </div>
+</div>
+`;

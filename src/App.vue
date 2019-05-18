@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <HelloWorld :msg="appName"/>
-    <PlanetPicker :if="planets && planets.length"/>
+    <PlanetPicker v-if="planets && planets.length"/>
+    <VehiclePicker v-if="vehicles && vehicles.length && selectedPlanet >= 0"/>
     <i v-if="errors && errors.length" class="fab fa-grav">{{ errorMsg }}</i>
   </div>
 </template>
@@ -12,15 +13,17 @@ import { mapActions } from "vuex";
 
 import HelloWorld from "./components/HelloWorld.vue";
 import PlanetPicker from "./components/PlanetPicker.vue";
+import VehiclePicker from "./components/VehiclePicker.vue";
 
 export default {
   name: "app",
   components: {
     HelloWorld,
-    PlanetPicker
+    PlanetPicker,
+    VehiclePicker
   },
-  computed: mapState(["planets", "errors"]),
-  methods: mapActions(["getPlanets"]),
+  computed: mapState(["planets", "vehicles", "selectedPlanet", "errors"]),
+  methods: mapActions(["getPlanets", "getVehicles"]),
 
   data() {
     return {
@@ -31,6 +34,7 @@ export default {
 
   created() {
     this.getPlanets();
+    this.getVehicles();
   }
 };
 </script>
