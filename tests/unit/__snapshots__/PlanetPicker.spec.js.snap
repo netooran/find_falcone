@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlanetPicker has the expected html structure 1`] = `
+<div
+  class="planet-picker"
+>
+  <div
+    class="planets"
+  >
+    <planet-stub
+      planet="[object Object]"
+    />
+    <planet-stub
+      planet="[object Object]"
+    />
+  </div>
+</div>
+`;
