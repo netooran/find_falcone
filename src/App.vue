@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <HelloWorld :msg="appName"/>
-    <PlanetPicker v-if="planets && planets.length"/>
-    <VehiclePicker v-if="vehicles && vehicles.length && selectedPlanet"/>
-    <i v-if="errors && errors.length" class="fab fa-grav">{{ errorMsg }}</i>
+    <i v-if="errors && errors.length" class="fab fa-grav centered">{{ errorMsg }}</i>
+    <h3 v-else-if="isGameOver">{{ missionResponse }}</h3>
+    <div v-else>
+      <PlanetPicker v-if="planets && planets.length"/>
+      <VehiclePicker v-if="vehicles && vehicles.length && selectedPlanet"/>
+      <button v-if="isLaunchReady" v-on:click="findFalcone">Find Falcone</button>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-import { mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 
 import HelloWorld from "./components/HelloWorld.vue";
 import PlanetPicker from "./components/PlanetPicker.vue";
@@ -22,8 +25,11 @@ export default {
     PlanetPicker,
     VehiclePicker
   },
-  computed: mapState(["planets", "vehicles", "selectedPlanet", "errors"]),
-  methods: mapActions(["getPlanets", "getVehicles"]),
+  computed: {
+    ...mapGetters(["isLaunchReady", "isGameOver", "missionResponse"]),
+    ...mapState(["planets", "vehicles", "selectedPlanet", "errors"])
+  },
+  methods: mapActions(["getPlanets", "getVehicles", "findFalcone"]),
 
   data() {
     return {
@@ -47,5 +53,33 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+button {
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  padding: 12px 32px;
+  font-size: 32px;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #2c3e50;
+  box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+button:hover {
+  background-color: #4caf50;
+  color: white;
+  box-shadow: 1px 1px 3px 4px #ccc;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
 </style>
