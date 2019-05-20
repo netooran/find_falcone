@@ -1,7 +1,7 @@
 <template>
   <div class="planet-picker">
     <div class="planets">
-      <Planet v-for="(planet, index) in planets" :planet="planet" :key="index"/>
+      <Planet v-for="(planet) in planets" :planet="planet" :key="planet.name"/>
     </div>
   </div>
 </template>

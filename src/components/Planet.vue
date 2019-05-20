@@ -1,5 +1,9 @@
 <template>
-  <div class="planet" v-on:click="selectPlanet($vnode.key)">
+  <div
+    class="planet"
+    :class="{active: isActive, squad : inSquad}"
+    v-on:click="isActive && selectPlanet($vnode.key)"
+  >
     <i class="fas fa-globe-africa fa-8x" :class="{selected: isSelected}"></i>
     <div class="planet-info">
       <h1>{{ planet.name }}</h1>
@@ -17,10 +21,20 @@ export default {
   props: { planet: { name: String, distance: Number } },
   methods: mapMutations(["selectPlanet"]),
   computed: {
-    ...mapState(["selectedPlanet"]),
+    ...mapState(["selectedPlanet", "squad"]),
+
+    isActive() {
+      return !(
+        Object.keys(this.squad).length == 4 && !this.squad[this.$vnode.key]
+      );
+    },
 
     isSelected() {
       return this.$vnode.key == this.selectedPlanet;
+    },
+
+    inSquad() {
+      return this.squad[this.$vnode.key];
     }
   }
 };
@@ -32,17 +46,25 @@ h4 {
   color: darkgrey;
 }
 
+.planet {
+  padding: 30px;
+  border-radius: 10px;
+}
+
 .selected {
   color: #89c0b7;
 }
 
-.planet {
-  padding: 30px;
-  border-radius: 10px;
+.active {
   box-shadow: 1px 1px 1px 1px #ccc;
 }
 
-.planet:hover {
+.selected {
+  color: #89c0b7;
+}
+
+.squad,
+.active:hover {
   box-shadow: 1px 1px 3px 4px rgb(155, 154, 154);
 }
 

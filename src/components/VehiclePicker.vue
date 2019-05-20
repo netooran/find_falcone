@@ -1,7 +1,7 @@
 <template>
   <div class="vehicle-picker">
     <div class="vehicles">
-      <Vehicle v-for="(vehicle, index) in vehicles" :vehicle="vehicle" :key="index"/>
+      <Vehicle v-for="(vehicle) in vehicles" :vehicle="vehicle" :key="vehicle.name"/>
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div id="app">
     <HelloWorld :msg="appName"/>
     <PlanetPicker v-if="planets && planets.length"/>
-    <VehiclePicker v-if="vehicles && vehicles.length && selectedPlanet >= 0"/>
+    <VehiclePicker v-if="vehicles && vehicles.length && selectedPlanet"/>
     <i v-if="errors && errors.length" class="fab fa-grav">{{ errorMsg }}</i>
   </div>
 </template>
